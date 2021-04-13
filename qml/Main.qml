@@ -66,16 +66,16 @@ App {
 
         // only enable if user is logged in
         // login page below overlays navigation then
-        enabled: dataModel.userLoggedIn
+        enabled: true //dataModel.userLoggedIn
 
         // first tab
         NavigationItem {
-            title: qsTr("Todo List")
+            title: qsTr("Books")
             icon: IconType.list
 
             NavigationStack {
                 splitView: tablet // use side-by-side view on tablets
-                initialPage: TodoListPage { }
+                initialPage: BooksPage { }
             }
         }
 
@@ -101,7 +101,7 @@ App {
 
     // login page lies on top of previous items and overlays if user is not logged in
     LoginPage {
-        visible: opacity > 0
+        visible: false //opacity > 0
         enabled: visible
         opacity: dataModel.userLoggedIn ? 0 : 1 // hide if user is logged in
 
@@ -111,7 +111,7 @@ App {
 
     // This item contains example code for the chosen Felgo Plugins
     // It is hidden by default and will overlay the QML items above if shown
-    PluginMainItem {
+    /*PluginMainItem {
         id: pluginMainItem
         visible: false // set this to true to show the plugin example
         property alias firebasePage: firebasePage
@@ -121,5 +121,5 @@ App {
             visible: false
             onPopped:  { firebasePage.parent = pluginMainItem; visible = false }
         }
-    }
+    }*/
 }

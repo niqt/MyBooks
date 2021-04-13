@@ -69,3 +69,9 @@ win32 {
 macx {
     ICON = macx/app_icon.icns
 }
+
+DISTFILES += \
+    qml/model/BookModel.qml \
+    qml/model/NoteModel.qml \
+    qml/pages/BooksPage.qml \
+    qml/pages/CameraPage.qml
